@@ -3,6 +3,19 @@ provider "google" {
   region  = var.region
 }
 
+
+resource "google_project_service" "apis" { 
+
+  for_each = toset(["container.googleapis.com", "cloudbuild.googleapis.com"])
+
+  disable_depedent_services = true
+  disable_on_destroy = false
+  project = var.project_id
+  service = each.key
+
+}
+
+
 module "gcp_kubernetes" {
   source       = "./modules/terraform-gcp-kubernetes/"
   project_id   = var.project_id
