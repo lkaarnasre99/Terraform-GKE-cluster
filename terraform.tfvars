@@ -1,0 +1,8 @@
+project_id    = "playground-s-11-d7de1d31"
+region        = "us-central1"
+zone          = "us-central1-a"
+cluster_name  = "hello-cluster"
+node_count    = 3
+min_nodes     = 2
+max_nodes     = 6
+machine_type  = "e2-medium"
