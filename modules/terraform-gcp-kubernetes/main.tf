@@ -1,5 +1,6 @@
 data "google_client_config" "default" {}
-data "google_project" "project {
+
+data "google_project" "project" {
  project_id = var.project_id
 }
 
@@ -42,7 +43,7 @@ resource "google_container_node_pool" "primary_nodes" {
 
 provider "kubernetes" {
   host                   = "https://${google_container_cluster.hello_cluster.endpoint}"
-  token                  = data.google_client_config.default.access_token
+  token                  =  data.google_client_config.default.access_token
   cluster_ca_certificate = base64decode(google_container_cluster.hello_cluster.master_auth[0].cluster_ca_certificate)
 }
 

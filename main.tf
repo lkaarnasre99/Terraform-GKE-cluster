@@ -3,6 +3,17 @@ provider "google" {
   region  = var.region
 }
 
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+    }
+    kubernetes = {
+      source  = "hashicorp/kubernetes"
+    }
+  }
+}
+
 resource "google_project_service" "apis" { 
 
   for_each = toset(["container.googleapis.com","cloudbuild.googleapis.com"])
