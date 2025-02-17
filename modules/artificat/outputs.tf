@@ -1,7 +1,7 @@
 output "repository_id" {
 
 value = google_artificat_registry_repository.my_repo_name
-descridescription = "The repository ID"
+description = "The repository ID"
 } 
 
 output "name" {
