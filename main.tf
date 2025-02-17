@@ -18,7 +18,7 @@ resource "google_project_service" "apis" {
 
   for_each = toset(["container.googleapis.com","cloudbuild.googleapis.com"])
 
-  disable_depedent_services = true
+  disable_dependent_services = true
   disable_on_destroy = false
   project = var.project_id
   service = each.key
