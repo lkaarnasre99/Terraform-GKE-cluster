@@ -7,7 +7,7 @@ data "google_project" "project" {
 resource "google_project_iam_member" "cloudbuild_kubernetes_developer" {
 project = var.project_id
 role = "roles/container.developer"
-member = "serviceaccount:${data.google_project.project.number}@cloudbuild.gserviceaccount.com"
+member = "serviceAccount:${data.google_project.project.number}@cloudbuild.gserviceaccount.com"
 }
 
 
