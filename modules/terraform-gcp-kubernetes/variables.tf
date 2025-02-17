@@ -41,3 +41,9 @@ variable "machine_type" {
   type        = string
   
 }
+
+variable "min_master_version {
+  description = "min version of kubernetes for the cluster's control pane (master)"
+   type     = string
+
+}

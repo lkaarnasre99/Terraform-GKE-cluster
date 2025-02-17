@@ -6,3 +6,4 @@ node_count    = 3
 min_nodes     = 2
 max_nodes     = 6
 machine_type  = "e2-medium"
+min_master_version = "1.29"
