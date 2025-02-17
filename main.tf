@@ -12,7 +12,10 @@ resource "google_project_service" "apis" {
   project = var.project_id
   service = each.key
 
+
 }
+
+
 module "gcp_kubernetes" {
   source       = "./modules/terraform-gcp-kubernetes/"
   project_id   = var.project_id
@@ -23,8 +26,16 @@ module "gcp_kubernetes" {
   min_nodes    = var.min_nodes
   max_nodes    = var.max_nodes
   machine_type = var.machine_type
+  min_master_version = var.min_master_version
 }
 
+
+module "gcp_artifact_repo" {
+   source = "./modules/artificat/"
+   project_id = var.project_id
+   region    = var.region
+  }
+   
 /*output "kubernetes_cluster_name" {
   value = module.gcp_kubernetes.kubernetes_cluster_name
 }
