@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"gcp_artifact_repo","Source":"./modules/artificat","Dir":"modules/artificat"},{"Key":"gcp_kubernetes","Source":"./modules/terraform-gcp-kubernetes","Dir":"modules/terraform-gcp-kubernetes"}]}
